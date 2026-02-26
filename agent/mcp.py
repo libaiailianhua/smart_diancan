@@ -145,9 +145,7 @@ def delivery_check_tool(address: str, travel_mode: str) -> str:
 
             response = f"""
         配送信息查询结果：
-
-        配送地址：{result['formatted_address']}
-        配送距离：{result['distance']}公里 ({MODE_MAPPING[travel_mode]})
+        配送地址：{result['formatted_address']}， 配送距离：{result['distance']}公里 ({MODE_MAPPING[travel_mode]})
         配送状态：{status_text}
                     """.strip()
 

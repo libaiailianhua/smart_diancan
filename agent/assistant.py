@@ -13,7 +13,7 @@ import time
 from json import JSONDecodeError
 
 from dotenv import load_dotenv
-from typing import Dict
+from typing import Dict, Optional
 from tools.llm_tool import call_llm_api
 from agent.mcp import general_inquiry, dish_query, delivery_check_tool
 
@@ -159,7 +159,7 @@ class SmartRestaurantAssistant:
 
         return self._fallback_intent_analysis(query)
 
-    def execute_tool(self, format_query: str, selected_tool: str) -> Dict[str, str] or str:
+    def execute_tool(self, format_query: str, selected_tool: str) ->Optional[Dict[str, str] or str]:
         """执行工具"""
 
         try:
